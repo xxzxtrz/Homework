@@ -1,0 +1,35 @@
+
+    cout << "\n" << "Название тварей: Люди" << "\n";
+    cout << "number of persons: ";
+    cin >> number_of_spear;
+    cout << "damage: ";
+    cin >> spear_dmg;
+    cout << "HP: ";
+    cin >> spear_hp;
+
+    do {
+        dragon_hp = dragon_hp - spear_dmg * number_of_spear;
+        if (dragon_hp < 0) {
+            dragon_hp = 0;
+        }
+        cout << "Люди стараються одбиться --->\ndamage= " << spear_dmg * number_of_spear << "\nУ Гниль " << dragon_hp << " HP" << "\n\n";
+
+        number_of_spear = ceil((spear_hp * number_of_spear - dragon_dmg) / spear_hp);
+        if (number_of_spear < 0) {
+            number_of_spear = 0;
+        }
+        cout << "Гниль в нападении --->\n УРОН= " << dragon_dmg << "\n" << number_of_spear << " Люди выжили" << "\n\n";
+
+
+        if (dragon_hp == 0) {
+            cout << "Люди Win" << "\n";
+            break;
+        }
+        else if (number_of_spear == 0) {
+            cout << "Гниль Победила" << "\n";
+            break;
+        }
+
+    } while (true);
+    cout << "\n Вот такая мини игра.";
+}
